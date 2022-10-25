@@ -1,49 +1,27 @@
-:root {
-  --clr-screen: #858693;
-  --clr-normal: #e0e0e0;
-  --clr-orange: #f5913e;
-}
-
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-size: 1.5rem;
   margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-button {
-  border: none;
-  padding: 10px;
-}
-
-.calculator {
-  width: 350px;
-  max-width: 90%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 1px;
-  box-shadow: 10px 8px 28px -7px rgba(0, 0, 0, 0.15);
-}
-
-.screen {
-  background: var(--clr-screen);
-  color: white;
-  grid-column: span 4;
-  padding: 5px;
-  text-align: right;
-}
-
-.numberZero {
-  grid-column: span 2;
-}
-
-.orang {
-  background-color: var(--clr-orange);
-  color: white;
-}
-
-button:hover {
-  cursor: pointer;
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
+    monospace;
 }
