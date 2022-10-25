@@ -21,8 +21,12 @@ Number.propTypes = { className: PropTypes.string.isRequired };
 Number.propTypes = { value: PropTypes.number.isRequired };
 
 // Calculator
-/* eslint-disable */
 class Calculator extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+  
   render() {
     return (
       <div className="calculator">
