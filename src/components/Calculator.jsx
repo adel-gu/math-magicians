@@ -1,58 +1,100 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+import calculate from "../logic/calculate";
 
+// Sub Components => {Screen, oprands, Numbers}
 const Screen = ({ result }) => <span className="screen">{result}</span>;
-Screen.propTypes = { result: PropTypes.number.isRequired };
+Screen.propTypes = { result: PropTypes.string.isRequired };
 
-const Oprand = ({ className, data }) => (
-  <button type="button" className={className}>
+const Oprand = ({ className, data, onclick}) => (
+  <button type="button" className={className} onClick={onclick}>
     {data}
   </button>
 );
 Oprand.propTypes = { className: PropTypes.string.isRequired };
 Oprand.propTypes = { data: PropTypes.string.isRequired };
 
-const Number = ({ className, value }) => (
-  <button type="button" className={className}>
+const Number = ({ value, className , onClick}) => (
+  <button type="button" className={className} onClick={onClick}>
     {value}
   </button>
 );
-Number.propTypes = { className: PropTypes.string.isRequired };
-Number.propTypes = { value: PropTypes.number.isRequired };
+Number.propTypes = { value: PropTypes.string.isRequired };
+Number.propTypes = { className: PropTypes.string};
 
-// Calculator
+// Calculator Component
 class Calculator extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      oprands: [],
+      numValues: [0,1,2,3,4,5,6,7,8,9],
+      calculator: {
+        total: null,
+        next: null,
+        operation: null
+      },
+      oprandIsPressed: false
+    }
   }
-  
+
+  // Render the screen component
+  renderScreen = () => {
+    return (
+      <Screen result={(this.state.calculator.total) ? this.state.calculator.total: '0'}/>
+    )
+  }
+
+  // Show the clicked number
+  handlTotal = (number) => {
+    let total = (this.state.calculator.total) ? this.state.calculator.total : '';
+    this.setState({calculator: { total: total + number.toString()}});
+  }
+
+  // Render the numbers component
+  renderNumber = (i, className) => {
+    return (
+      <Number 
+        value={i} 
+        className={className}
+        onClick= {() => this.handlTotal(i)}
+      />
+    )
+  }
+
+  // renderOprand = (data, className) => {
+  //   return (
+  //     <Number value={i} className={className}/>
+  //   )
+  // }
+
+  // Render all calculator components
   render() {
     return (
       <div className="calculator">
-        <Screen result="0" />
+        {this.renderScreen()}
         {/* First row */}
-        <Oprand data="AC" />
+        <Oprand data="AC"/>
         <Oprand data="+/-" />
         <Oprand data="%" />
         <Oprand data="+" className="orang" />
         {/* Seccond row */}
-        <Number value="7" />
-        <Number value="8" />
-        <Number value="9" />
+        {this.renderNumber(7)}
+        {this.renderNumber(8)}
+        {this.renderNumber(9)}
         <Oprand data="*" className="orang" />
         {/* 3rd row */}
-        <Number value="4" />
-        <Number value="5" />
-        <Number value="6" />
+        {this.renderNumber(4)}
+        {this.renderNumber(5)}
+        {this.renderNumber(6)}
         <Oprand data="-" className="orang" />
         {/* 4th row */}
-        <Number value="1" />
-        <Number value="2" />
-        <Number value="3" />
+        {this.renderNumber(1)}
+        {this.renderNumber(2)}
+        {this.renderNumber(3)}
         <Oprand data="+" className="orang" />
         {/* 5th row */}
-        <Number value="0" className="numberZero" />
+        {this.renderNumber(0, 'numberZero')}
         <Number value="." />
         <Oprand data="=" className="orang" />
       </div>
