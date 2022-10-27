@@ -1,60 +1,118 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+import calculate from "../logic/calculate";
 
+// Sub Components => {Screen, oprands, Numbers}
 const Screen = ({ result }) => <span className="screen">{result}</span>;
-Screen.propTypes = { result: PropTypes.number.isRequired };
+Screen.propTypes = { result: PropTypes.string.isRequired };
 
-const Oprand = ({ className, data }) => (
-  <button type="button" className={className}>
+const Oprand = ({ data, className, onclick}) => (
+  <button type="button" className={className} onClick={onclick}>
     {data}
   </button>
 );
-Oprand.propTypes = { className: PropTypes.string.isRequired };
 Oprand.propTypes = { data: PropTypes.string.isRequired };
+Oprand.propTypes = { className: PropTypes.string };
+Oprand.propTypes = { onclick: PropTypes.func.isRequired };
 
-const Number = ({ className, value }) => (
-  <button type="button" className={className}>
+const Number = ({ value, className , onclick}) => (
+  <button type="button" className={className} onClick={onclick}>
     {value}
   </button>
 );
-Number.propTypes = { className: PropTypes.string.isRequired };
-Number.propTypes = { value: PropTypes.number.isRequired };
+Number.propTypes = { value: PropTypes.string.isRequired };
+Number.propTypes = { className: PropTypes.string};
+Number.propTypes = { onclick: PropTypes.func.isRequired};
 
-// Calculator
+// Calculator Component
 class Calculator extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      numValues: [0,1,2,3,4,5,6,7,8,9,'.'],
+      screen: '0',
+      calculator: {
+        total: '0',
+        next: null,
+        operation: null,
+      },
+    }
   }
-  
+
+  // Calculation method
+  handlCalculation = (buttonName) => {
+    const result = calculate(this.state.calculator, buttonName.toString());
+    this.setState({calculator: {...result}})
+  }
+
+  // Render the calculated result on the screen component.
+  renderScreen = () => {
+    let total = this.state.calculator.total;
+    let next = this.state.calculator.next;
+    let operation = this.state.calculator.operation;
+
+    let screen = `${total || ''}${operation || ''}${next || ''}`;
+    // If all the properties are null 
+    if (!(total || next || operation)) {
+      screen = "0";
+    }
+    
+    return (
+      <Screen result={screen}/>
+    )
+  }
+
+  // Render the numbers component
+  renderNumber = (i, className) => {
+    return (
+      <Number 
+        value={this.state.numValues[i]} 
+        className={className}
+        onclick= {() => this.handlCalculation(this.state.numValues[i])}
+      />
+    )
+  }
+
+  // Render Oprands
+  renderOprand = (data, className) => {
+    return (
+      <Oprand 
+        data={data} 
+        className={className}
+        onclick= {() => this.handlCalculation(data)}
+      />
+    )
+  }
+
+  // Render all calculator components
   render() {
     return (
       <div className="calculator">
-        <Screen result="0" />
+        {this.renderScreen()}
         {/* First row */}
-        <Oprand data="AC" />
-        <Oprand data="+/-" />
-        <Oprand data="%" />
-        <Oprand data="+" className="orang" />
+        {this.renderOprand('AC')}
+        {this.renderOprand('+/-')}
+        {this.renderOprand('%')}
+        {this.renderOprand('÷', "orang")}
         {/* Seccond row */}
-        <Number value="7" />
-        <Number value="8" />
-        <Number value="9" />
-        <Oprand data="*" className="orang" />
+        {this.renderNumber(7)}
+        {this.renderNumber(8)}
+        {this.renderNumber(9)}
+        {this.renderOprand('x', "orang")}
         {/* 3rd row */}
-        <Number value="4" />
-        <Number value="5" />
-        <Number value="6" />
-        <Oprand data="-" className="orang" />
+        {this.renderNumber(4)}
+        {this.renderNumber(5)}
+        {this.renderNumber(6)}
+        {this.renderOprand('-', "orang")}
         {/* 4th row */}
-        <Number value="1" />
-        <Number value="2" />
-        <Number value="3" />
-        <Oprand data="+" className="orang" />
+        {this.renderNumber(1)}
+        {this.renderNumber(2)}
+        {this.renderNumber(3)}
+        {this.renderOprand('+', "orang")}
         {/* 5th row */}
-        <Number value="0" className="numberZero" />
-        <Number value="." />
-        <Oprand data="=" className="orang" />
+        {this.renderNumber(0, 'numberZero')}
+        {this.renderNumber(10)}
+        {this.renderOprand('=', "orang")}
       </div>
     );
   }
