@@ -46,4 +46,9 @@ button {
 
 button:hover {
   cursor: pointer;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+button.orang:hover {
+  background-color: rgba(245, 145, 62, 0.8);
 }
