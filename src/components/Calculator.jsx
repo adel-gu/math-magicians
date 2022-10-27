@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
 import calculate from "../logic/calculate";
 
 // Sub Components => {Screen, oprands, Numbers}
