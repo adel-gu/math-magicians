@@ -11,16 +11,18 @@ const Oprand = ({ data, className, onclick}) => (
     {data}
   </button>
 );
-Oprand.propTypes = { className: PropTypes.string };
 Oprand.propTypes = { data: PropTypes.string.isRequired };
+Oprand.propTypes = { className: PropTypes.string };
+Oprand.propTypes = { onclick: PropTypes.func.isRequired };
 
-const Number = ({ value, className , onClick}) => (
-  <button type="button" className={className} onClick={onClick}>
+const Number = ({ value, className , onclick}) => (
+  <button type="button" className={className} onClick={onclick}>
     {value}
   </button>
 );
 Number.propTypes = { value: PropTypes.string.isRequired };
 Number.propTypes = { className: PropTypes.string};
+Number.propTypes = { onclick: PropTypes.func.isRequired};
 
 // Calculator Component
 class Calculator extends Component {
@@ -66,7 +68,7 @@ class Calculator extends Component {
       <Number 
         value={this.state.numValues[i]} 
         className={className}
-        onClick= {() => this.handlCalculation(this.state.numValues[i])}
+        onclick= {() => this.handlCalculation(this.state.numValues[i])}
       />
     )
   }
