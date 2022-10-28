@@ -1,5 +1,5 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
 import calculate from "../logic/calculate";
 
 // Sub Components => {Screen, oprands, Numbers}
@@ -25,31 +25,26 @@ Number.propTypes = { className: PropTypes.string};
 Number.propTypes = { onclick: PropTypes.func.isRequired};
 
 // Calculator Component
-class Calculator extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      numValues: [0,1,2,3,4,5,6,7,8,9,'.'],
-      screen: '0',
-      calculator: {
-        total: '0',
-        next: null,
-        operation: null,
-      },
-    }
-  }
+const Calculator = () => {
+  const [calculator, setCalculator] = useState({
+    total: '0',
+    next: null,
+    operation: null
+  });
+  // Numbers
+  const numValues = [0,1,2,3,4,5,6,7,8,9,'.'];
 
   // Calculation method
-  handlCalculation = (buttonName) => {
-    const result = calculate(this.state.calculator, buttonName.toString());
-    this.setState({calculator: {...result}})
+  const handlCalculation = (buttonName) => {
+    const result = calculate(calculator, buttonName.toString());
+    setCalculator({...result})
   }
 
   // Render the calculated result on the screen component.
-  renderScreen = () => {
-    let total = this.state.calculator.total;
-    let next = this.state.calculator.next;
-    let operation = this.state.calculator.operation;
+  const renderScreen = () => {
+    let total = calculator.total;
+    let next = calculator.next;
+    let operation = calculator.operation;
 
     let screen = `${total || ''}${operation || ''}${next || ''}`;
     // If all the properties are null 
@@ -63,59 +58,57 @@ class Calculator extends Component {
   }
 
   // Render the numbers component
-  renderNumber = (i, className) => {
+  const renderNumber = (i, className) => {
     return (
       <Number 
-        value={this.state.numValues[i]} 
+        value={numValues[i]} 
         className={className}
-        onclick= {() => this.handlCalculation(this.state.numValues[i])}
+        onclick= {() => handlCalculation(numValues[i])}
       />
     )
   }
 
   // Render Oprands
-  renderOprand = (data, className) => {
+  const renderOprand = (data, className) => {
     return (
       <Oprand 
         data={data} 
         className={className}
-        onclick= {() => this.handlCalculation(data)}
+        onclick= {() => handlCalculation(data)}
       />
     )
   }
 
   // Render all calculator components
-  render() {
-    return (
-      <div className="calculator">
-        {this.renderScreen()}
-        {/* First row */}
-        {this.renderOprand('AC')}
-        {this.renderOprand('+/-')}
-        {this.renderOprand('%')}
-        {this.renderOprand('÷', "orang")}
-        {/* Seccond row */}
-        {this.renderNumber(7)}
-        {this.renderNumber(8)}
-        {this.renderNumber(9)}
-        {this.renderOprand('x', "orang")}
-        {/* 3rd row */}
-        {this.renderNumber(4)}
-        {this.renderNumber(5)}
-        {this.renderNumber(6)}
-        {this.renderOprand('-', "orang")}
-        {/* 4th row */}
-        {this.renderNumber(1)}
-        {this.renderNumber(2)}
-        {this.renderNumber(3)}
-        {this.renderOprand('+', "orang")}
-        {/* 5th row */}
-        {this.renderNumber(0, 'numberZero')}
-        {this.renderNumber(10)}
-        {this.renderOprand('=', "orang")}
-      </div>
-    );
-  }
+  return (
+    <div className="calculator">
+      {renderScreen()}
+      {/* First row */}
+      {renderOprand('AC')}
+      {renderOprand('+/-')}
+      {renderOprand('%')}
+      {renderOprand('÷', "orang")}
+      {/* Seccond row */}
+      {renderNumber(7)}
+      {renderNumber(8)}
+      {renderNumber(9)}
+      {renderOprand('x', "orang")}
+      {/* 3rd row */}
+      {renderNumber(4)}
+      {renderNumber(5)}
+      {renderNumber(6)}
+      {renderOprand('-', "orang")}
+      {/* 4th row */}
+      {renderNumber(1)}
+      {renderNumber(2)}
+      {renderNumber(3)}
+      {renderOprand('+', "orang")}
+      {/* 5th row */}
+      {renderNumber(0, 'numberZero')}
+      {renderNumber(10)}
+      {renderOprand('=', "orang")}
+    </div>
+  );
 }
 
 export default Calculator;
