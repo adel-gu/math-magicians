@@ -2,6 +2,9 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import calculate from "../logic/calculate";
 
+// Stylesheets
+import "./Calculator.css"
+
 // Sub Components => {Screen, oprands, Numbers}
 const Screen = ({ result }) => <span className="screen">{result}</span>;
 Screen.propTypes = { result: PropTypes.string.isRequired };
@@ -81,33 +84,38 @@ const Calculator = () => {
 
   // Render all calculator components
   return (
-    <div className="calculator">
-      {renderScreen()}
-      {/* First row */}
-      {renderOprand('AC')}
-      {renderOprand('+/-')}
-      {renderOprand('%')}
-      {renderOprand('÷', "orang")}
-      {/* Seccond row */}
-      {renderNumber(7)}
-      {renderNumber(8)}
-      {renderNumber(9)}
-      {renderOprand('x', "orang")}
-      {/* 3rd row */}
-      {renderNumber(4)}
-      {renderNumber(5)}
-      {renderNumber(6)}
-      {renderOprand('-', "orang")}
-      {/* 4th row */}
-      {renderNumber(1)}
-      {renderNumber(2)}
-      {renderNumber(3)}
-      {renderOprand('+', "orang")}
-      {/* 5th row */}
-      {renderNumber(0, 'numberZero')}
-      {renderNumber(10)}
-      {renderOprand('=', "orang")}
-    </div>
+    <main>
+      <div className="container flex justify-between">
+        <h1>Let's do some math!</h1>
+        <div className="calculator">
+          {renderScreen()}
+          {/* First row */}
+          {renderOprand('AC')}
+          {renderOprand('+/-')}
+          {renderOprand('%')}
+          {renderOprand('÷', "orang")}
+          {/* Seccond row */}
+          {renderNumber(7)}
+          {renderNumber(8)}
+          {renderNumber(9)}
+          {renderOprand('x', "orang")}
+          {/* 3rd row */}
+          {renderNumber(4)}
+          {renderNumber(5)}
+          {renderNumber(6)}
+          {renderOprand('-', "orang")}
+          {/* 4th row */}
+          {renderNumber(1)}
+          {renderNumber(2)}
+          {renderNumber(3)}
+          {renderOprand('+', "orang")}
+          {/* 5th row */}
+          {renderNumber(0, 'numberZero')}
+          {renderNumber(10)}
+          {renderOprand('=', "orang")}
+        </div>
+      </div>
+    </main>
   );
 }
 
