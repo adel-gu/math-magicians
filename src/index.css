@@ -1,7 +1,8 @@
 :root {
+  --clr-primary: #6a82fb;
   --clr-screen: #ffffff;
   --clr-normal: #e0e0e0;
-  --clr-blue: #328695;
+  --clr-bg: #ded0f0;
 }
 
 #root {
@@ -12,12 +13,10 @@
 }
 
 body {
+  background: linear-gradient(to bottom, #141e30, #243b55);
   min-height: 100vh;
-  font-size: 1.5rem;
   margin: 0;
   height: 100vh;
-  background: #bdc3c7;
-  background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50);
 }
 
 .container {
@@ -49,4 +48,11 @@ body {
 
 .py-2 {
   padding-block: 1em;
+}
+
+.header-footer {
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid white;
+  border-radius: 100px;
+  padding-inline: 1em;
 }

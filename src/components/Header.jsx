@@ -3,25 +3,22 @@ import { Link } from "react-router-dom";
 import "../styles/Header.css";
 
 const Header = () => {
-  const FooterBackground = {
-    backgroundColor: "red",
-    marginTop: '10px',
-    borderRadius: "100px",
-    paddingInline: "1em"
+  const mt = {
+    marginTop: "10px",
   }
   return (
-    <header className="header">
-      <div className="container flex justify-between align-center" style={FooterBackground}>
-        <a href="/" className="logo"><h3>Math Magicians</h3></a>
-        <nav>
-          <ul className="flex gap-3">
-            <li><Link to="/" className="nav-link">Home</Link></li>
-            <li><Link to="/calculator" className="nav-link">Calculator</Link></li>
-            <li><Link to="/quote" className="nav-link">Quote</Link></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+  <header className="header">
+    <div className="container header-footer flex justify-between align-center" style={mt}>
+      <h3>Math 🧙 Magicians</h3>
+      <nav>
+        <ul className="flex gap-3">
+          <li><Link to="/" className="nav-link">Home</Link></li>
+          <li><Link to="/calculator" className="nav-link">Calculator</Link></li>
+          <li><Link to="/quote" className="nav-link">Quote</Link></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
   )
 }
 
