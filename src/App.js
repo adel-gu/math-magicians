@@ -1,5 +1,5 @@
 // React Router
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 // App pages
 import Calculator from './pages/Calculator';
@@ -14,13 +14,11 @@ const App = () => {
   return (
     <>
       <Header />
-      <Router>
-        <Routes>
-          <Route path={'/'} element={<Home />} />
-          <Route path={'/Calculator'} element={<Calculator />} />
-          <Route path={'/quote'} element={<Quote />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path={'/'} element={<Home />} />
+        <Route path={'calculator'} element={<Calculator />} />
+        <Route path={'quote'} element={<Quote />} />
+      </Routes>
       <Footer />
     </>
   );

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+// StyleSheets
 import "../styles/Header.css";
 
 const Header = () => {
@@ -13,9 +15,9 @@ const Header = () => {
         <a href="/" className="logo"><h3>Math Magicians</h3></a>
         <nav>
           <ul className="flex gap-3">
-            <li><a href="/" className="nav-link">Home</a></li>
-            <li><a href="/calculator" className="nav-link">Calculator</a></li>
-            <li><a href="/quote" className="nav-link">Quote</a></li>
+            <li><Link to="/" className="nav-link">Home</Link></li>
+            <li><Link to="/calculator" className="nav-link">Calculator</Link></li>
+            <li><Link to="/quote" className="nav-link">Quote</Link></li>
           </ul>
         </nav>
       </div>
