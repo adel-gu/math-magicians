@@ -1,4 +1,6 @@
-import "./Footer.css"
+// Stylesheets
+import "../styles/Footer.css"
+
 const Footer = () => {
   const FooterBackground = {
     backgroundColor: "red",
