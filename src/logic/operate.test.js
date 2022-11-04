@@ -1,18 +1,18 @@
 import operate from './operate';
 
 describe('Subtraction', () => {
-    test('Subtraction of two positive numbers', () => {
-      const result = operate('4', '2', '-');
-      expect(result).toBe('2');
-    });
-    test('Subtraction of two negative numbers', () => {
-      const result = operate('-4', '-2', '-');
-      expect(result).toBe('-2');
-    });
-    test('Subtraction of a negative number and a positive number', () => {
-      const result = operate('-4', '2', '-');
-      expect(result).toBe('-6');
-    });
+  test('Subtraction of two positive numbers', () => {
+    const result = operate('4', '2', '-');
+    expect(result).toBe('2');
+  });
+  test('Subtraction of two negative numbers', () => {
+    const result = operate('-4', '-2', '-');
+    expect(result).toBe('-2');
+  });
+  test('Subtraction of a negative number and a positive number', () => {
+    const result = operate('-4', '2', '-');
+    expect(result).toBe('-6');
+  });
 });
 
 describe('Addition', () => {

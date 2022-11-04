@@ -10,18 +10,16 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 // APP
-const App = () => {
-  return (
-    <>
-      <Header />
-      <Routes>
-        <Route path={'/'} element={<Home />} />
-        <Route path={'calculator'} element={<Calculator />} />
-        <Route path={'quote'} element={<Quote />} />
-      </Routes>
-      <Footer />
-    </>
-  );
-};
+const App = () => (
+  <>
+    <Header />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="calculator" element={<Calculator />} />
+      <Route path="quote" element={<Quote />} />
+    </Routes>
+    <Footer />
+  </>
+);
 
 export default App;
