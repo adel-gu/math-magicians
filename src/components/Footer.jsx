@@ -1,6 +1,3 @@
-// Stylesheets
-import "../styles/Footer.css"
-
 const Footer = () => {
   const mb = {
     marginBottom: "10px"
