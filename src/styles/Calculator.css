@@ -15,7 +15,6 @@ button {
 
 .screen {
   background: var(--clr-screen);
-
   grid-column: span 4;
   padding: 5px;
   text-align: right;
