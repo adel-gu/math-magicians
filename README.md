@@ -23,13 +23,19 @@ To get a local copy up and running follow these simple example steps.
 - Or download it as a ZIP format from the green button above with the text "Code".
 
 ### Install
+Install all the necessary dependencies on your local machine
 ```
 npm install
+```
+### Test
+To run and check the tests for the components and the logic code for the app
+```
+npm run test
 ```
 ### Usage
 To experience a Demo on your local machine run:
 ```
-npm start
+npm run start
 ```
 
 ## Author

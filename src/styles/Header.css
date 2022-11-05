@@ -1,0 +1,16 @@
+/* Main style */
+.header a {
+  text-decoration: none;
+}
+
+.header ul {
+  list-style-type: none;
+}
+
+.logo {
+  color: #000;
+}
+
+.nav-link {
+  color: white;
+}
