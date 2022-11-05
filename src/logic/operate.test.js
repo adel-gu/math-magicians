@@ -64,7 +64,7 @@ describe('Division', () => {
   });
   test('Division by 0', () => {
     const result = operate('2', '0', '÷');
-    expect(result).toBe('Can\'t divide by 0.');
+    expect(result).toBe("Can't divide by 0.");
   });
 });
 
@@ -83,6 +83,14 @@ describe('Modulo', () => {
   });
   test('Division by 0', () => {
     const result = operate('2', '0', '%');
-    expect(result).toBe('Can\'t find modulo as can\'t divide by 0.');
+    expect(result).toBe("Can't find modulo as can't divide by 0.");
+  });
+});
+
+describe('Unknown operation', () => {
+  test('Will throw an error: ', () => {
+    expect(() => {
+      operate('2', '0', 't');
+    }).toThrow();
   });
 });
