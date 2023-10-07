@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 // App pages
-import Calculator from './pages/Calculator';
+import CalculatorPage from './pages/Calculator';
 import Home from './pages/Home';
 import Quote from './pages/Quote';
 // Components
@@ -15,7 +15,7 @@ const App = () => (
     <Header />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="calculator" element={<Calculator />} />
+      <Route path="calculator" element={<CalculatorPage />} />
       <Route path="quote" element={<Quote />} />
     </Routes>
     <Footer />
