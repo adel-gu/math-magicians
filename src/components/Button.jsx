@@ -21,6 +21,7 @@ export const Button = ({
       style={btnStyle}
       className={`btn ${color}`}
       onClick={() => getBtnData(data)}
+      data-testid="buttonTestId"
     >
       {data}
     </button>

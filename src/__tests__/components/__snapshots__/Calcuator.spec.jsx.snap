@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calculator should match snapshot 1`] = `
+<div
+  className="calculator"
+>
+  <span
+    className="screen"
+    data-testid="screenTestId"
+  >
+    0
+  </span>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "1 / span 1",
+        "gridRow": 2,
+      }
+    }
+  >
+    AC
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "2 / span 1",
+        "gridRow": 2,
+      }
+    }
+  >
+    +/-
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "3 / span 1",
+        "gridRow": 2,
+      }
+    }
+  >
+    %
+  </button>
+  <button
+    className="btn orang"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "4 / span 1",
+        "gridRow": 2,
+      }
+    }
+  >
+    +
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "1 / span 1",
+        "gridRow": 3,
+      }
+    }
+  >
+    7
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "2 / span 1",
+        "gridRow": 3,
+      }
+    }
+  >
+    8
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "3 / span 1",
+        "gridRow": 3,
+      }
+    }
+  >
+    9
+  </button>
+  <button
+    className="btn orang"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "4 / span 1",
+        "gridRow": 3,
+      }
+    }
+  >
+    x
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "1 / span 1",
+        "gridRow": 4,
+      }
+    }
+  >
+    4
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "2 / span 1",
+        "gridRow": 4,
+      }
+    }
+  >
+    5
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "3 / span 1",
+        "gridRow": 4,
+      }
+    }
+  >
+    6
+  </button>
+  <button
+    className="btn orang"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "4 / span 1",
+        "gridRow": 4,
+      }
+    }
+  >
+    -
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "1 / span 1",
+        "gridRow": 5,
+      }
+    }
+  >
+    1
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "2 / span 1",
+        "gridRow": 5,
+      }
+    }
+  >
+    2
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "3 / span 1",
+        "gridRow": 5,
+      }
+    }
+  >
+    3
+  </button>
+  <button
+    className="btn orang"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "4 / span 1",
+        "gridRow": 5,
+      }
+    }
+  >
+    /
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "1 / span 2",
+        "gridRow": 6,
+      }
+    }
+  >
+    0
+  </button>
+  <button
+    className="btn undefined"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "3 / span 1",
+        "gridRow": 6,
+      }
+    }
+  >
+    .
+  </button>
+  <button
+    className="btn orang"
+    data-testid="buttonTestId"
+    onClick={[Function]}
+    style={
+      Object {
+        "gridColumn": "4 / span 1",
+        "gridRow": 6,
+      }
+    }
+  >
+    =
+  </button>
+</div>
+`;

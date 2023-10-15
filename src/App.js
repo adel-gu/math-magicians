@@ -1,5 +1,5 @@
 // React Router
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, Outlet } from 'react-router-dom';
 
 // App pages
 import CalculatorPage from './pages/Calculator';
@@ -9,17 +9,26 @@ import Quote from './pages/Quote';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-// APP
-const App = () => (
+const Layout = () => (
   <>
     <Header />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="calculator" element={<CalculatorPage />} />
-      <Route path="quote" element={<Quote />} />
-    </Routes>
+    <Outlet />
     <Footer />
   </>
+);
+
+// APP
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="calculator" element={<CalculatorPage />} />
+        <Route path="quote" element={<Quote />} />
+        <Route path="*" element={<div>404 Page...</div>} />
+      </Route>
+    </Routes>
+  </BrowserRouter>
 );
 
 export default App;

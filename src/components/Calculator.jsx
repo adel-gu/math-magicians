@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
-import buttonsData from './buttonData';
 import { Screen } from './Screen';
+import buttonsData from './buttonData';
 import calculate from '../logic/calculate';
 
 // Stylesheets

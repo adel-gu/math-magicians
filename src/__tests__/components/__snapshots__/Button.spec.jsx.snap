@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should match the snapshot 1`] = `
+<button
+  className="btn undefined"
+  data-testid="buttonTestId"
+  onClick={[Function]}
+  style={
+    Object {
+      "gridColumn": "undefined / span 1",
+      "gridRow": undefined,
+    }
+  }
+>
+  0
+</button>
+`;

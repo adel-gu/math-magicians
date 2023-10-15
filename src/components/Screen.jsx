@@ -5,7 +5,11 @@ import PropTypes from 'prop-types';
 import '../styles/Calculator.css';
 
 export const Screen = ({ result }) => {
-  return <span className="screen">{result}</span>;
+  return (
+    <span className="screen" data-testid="screenTestId">
+      {result}
+    </span>
+  );
 };
 
 Screen.defaultProps = {
