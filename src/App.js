@@ -1,5 +1,7 @@
 // React Router
-import { Routes, Route, BrowserRouter, Outlet } from 'react-router-dom';
+import {
+  Routes, Route, BrowserRouter, Outlet,
+} from 'react-router-dom';
 
 // App pages
 import CalculatorPage from './pages/Calculator';
