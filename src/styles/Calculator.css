@@ -1,4 +1,4 @@
-button {
+.btn {
   border: none;
   padding: 15px 10px;
   background-color: aliceblue;
@@ -15,6 +15,7 @@ button {
 
 .screen {
   background: var(--clr-screen);
+  color: #141e30;
   grid-column: span 4;
   padding: 5px;
   text-align: right;
@@ -29,11 +30,11 @@ button {
   color: white;
 }
 
-button:hover {
+.btn:hover {
   cursor: pointer;
   background: rgba(0, 0, 0, 0.1);
 }
 
-button.orang:hover {
+.btn.orang:hover {
   background-color: rgba(245, 145, 62, 0.8);
 }

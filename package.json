@@ -15,11 +15,12 @@
     "react-test-renderer": "^18.2.0",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "http://adel-gu.github.io/math-magicians",
+  "homepage": "http://adel-gu.github.io/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "react-scripts test --coverage",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
